@@ -6,6 +6,7 @@ import { FastXMLParser } from '../commons/FastXMLParser';
 import { FileParser } from '../commons/FileParser/FileParser';
 import { FileReader } from '../commons/FileReader/FileReader';
 import { designMapData } from './designMap.mock';
+import { DesignMap } from './designMap.type';
 import { GetPathsReturnType } from './IDMlFolderSystem.interface';
 
 const xmlParser = new FastXMLParser().getInstance();
