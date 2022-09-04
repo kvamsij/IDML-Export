@@ -2,7 +2,7 @@
 /* eslint-disable class-methods-use-this */
 import { Color, ResourceGraphic } from '../Resources/Graphics/Graphic.type';
 
-export class GrpahicDataProcessor {
+export class GraphicDataProcessor {
   process(data: ResourceGraphic): Color[] {
     return data['idPkg:Graphic'].Color;
   }
