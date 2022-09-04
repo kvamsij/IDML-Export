@@ -1,12 +1,11 @@
+import { StylesMockData } from '@src/libs/commons/DataProcessors/Resources/StylesDataProcessor/Styles.data.mock';
 import { FastXMLParser } from '@src/libs/commons/FastXMLParser';
 import { FileParser } from '@src/libs/commons/FileParser/FileParser';
 import { FileParserInterface } from '@src/libs/commons/FileParser/FileParser.interface';
-import { StylesMockData } from '@src/libs/commons/DataProcessors/Resources/StylesDataProcessor/Styles.data.mock';
 import { ProcessorDataType } from '../interfaces/DataProcessorInterface';
-import { IDMLFonts } from '../types/Fonts.type';
-import { GraphicsMockData } from './Graphics.data.mock';
-import { GraphicDataProcessor } from './GraphicDataProcessor';
 import { ResourceGraphic } from '../types/Graphic.type';
+import { GraphicDataProcessor } from './GraphicDataProcessor';
+import { GraphicsMockData } from './Graphics.data.mock';
 
 let parsedData: ProcessorDataType;
 let fileParser: FileParserInterface;
