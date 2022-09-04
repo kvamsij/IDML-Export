@@ -4,7 +4,6 @@ import { FileParser } from '@src/libs/commons/FileParser/FileParser';
 import { FileParserInterface } from '@src/libs/commons/FileParser/FileParser.interface';
 import { GraphicsMockData } from '../GraphicDataProcessor/Graphics.data.mock';
 import { ProcessorDataType } from '../interfaces/DataProcessorInterface';
-import { IDMLPreferences } from '../types/Preferences.type';
 import { IDMLStyles } from '../types/Styles.type';
 import { StylesDataProcessor } from './StylesDataProcessor';
 
