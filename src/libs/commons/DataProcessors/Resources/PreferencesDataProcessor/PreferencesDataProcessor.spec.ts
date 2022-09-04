@@ -16,7 +16,7 @@ beforeAll(async () => {
   parsedData = await fileParser.parse(PreferencesMockData);
 });
 
-describe('Graphic Data Processor', () => {
+describe('Preferences Data Processor', () => {
   describe('Initialization', () => {
     it('should be able to call new() on PreferenceDataProcessor class', () => {
       const preferences = new PreferenceDataProcessor();
