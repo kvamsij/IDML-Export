@@ -5,15 +5,18 @@ import { Font } from '../DataProcessors/Resources/types/Fonts.type';
 import { Color } from '../DataProcessors/Resources/types/Graphic.type';
 import { DocumentPreference } from '../DataProcessors/Resources/types/Preferences.type';
 import { CharacterStyle, ParagraphStyle } from '../DataProcessors/Resources/types/Styles.type';
+import { Story } from '../DataProcessors/Stories/types/Story.type';
 
 type LoadDataType = { dataStoreName: string; data: ProcessorReturnType };
+type MapDataType = Color | Font | CharacterStyle | ParagraphStyle | DocumentPreference | Story;
+
 type DataLoaderReturnType = {
-  [key: string]: Map<string, Color | Font | CharacterStyle | ParagraphStyle | DocumentPreference>;
+  [key: string]: Map<string, MapDataType>;
 };
 
 export class DataLoader {
   load(options: LoadDataType): DataLoaderReturnType {
-    const storeMap = new Map<string, Color | Font | CharacterStyle | ParagraphStyle | DocumentPreference>();
+    const storeMap = new Map<string, MapDataType>();
     const { dataStoreName, data } = options;
     const result: DataLoaderReturnType = {};
 
