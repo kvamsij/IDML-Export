@@ -5,7 +5,10 @@ import { ProcessorDataType, ProcessorReturnType } from '../interfaces/DataProces
 
 export class GraphicDataProcessor extends AbstractDataProcessor {
   process(data: ProcessorDataType): ProcessorReturnType {
-    if ('idPkg:Graphic' in data) return data['idPkg:Graphic'].Color;
+    if ('idPkg:Graphic' in data) {
+      const processedData = data['idPkg:Graphic'].Color;
+      return { processedData, dataStoreName: 'Colors' };
+    }
     return super.process(data);
   }
 }
