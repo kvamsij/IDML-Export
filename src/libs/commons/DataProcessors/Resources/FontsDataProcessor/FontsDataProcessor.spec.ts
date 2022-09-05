@@ -49,8 +49,13 @@ describe('Fonts', () => {
     it('should return Array of Font', async () => {
       const fonts = new FontsDataProcessor();
       const expectedData = (parsedData as IDMLFonts)['idPkg:Fonts'].FontFamily.flatMap((fontFamily) => fontFamily.Font);
-      const processedData = fonts.process(parsedData);
+      const { processedData } = fonts.process(parsedData);
       expect(processedData).toMatchObject(expectedData);
+    });
+    it('should return dataStoreName as Fonts', async () => {
+      const fonts = new FontsDataProcessor();
+      const { dataStoreName } = fonts.process(parsedData);
+      expect(dataStoreName).toStrictEqual('Fonts');
     });
   });
 });
