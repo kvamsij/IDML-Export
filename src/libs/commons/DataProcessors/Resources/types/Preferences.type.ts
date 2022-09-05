@@ -25,7 +25,7 @@ export enum Type {
 }
 export type BaselineFrameGridColor = {
   '#text': string;
-  type: Type;
+  type: string;
 };
 export type DocumentPreferenceProperties = {
   ColumnGuideColor: BaselineFrameGridColor;
