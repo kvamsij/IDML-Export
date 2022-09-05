@@ -49,8 +49,14 @@ describe('Graphic Data Processor', () => {
     it('should return Array of Color', async () => {
       const fonts = new GraphicDataProcessor();
       const expectedData = (parsedData as ResourceGraphic)['idPkg:Graphic'].Color;
-      const processedData = fonts.process(parsedData);
+      const { processedData } = fonts.process(parsedData);
       expect(processedData).toMatchObject(expectedData);
+    });
+
+    it('should return dataStoreName of Colors', async () => {
+      const fonts = new GraphicDataProcessor();
+      const { dataStoreName } = fonts.process(parsedData);
+      expect(dataStoreName).toStrictEqual('Colors');
     });
   });
 });

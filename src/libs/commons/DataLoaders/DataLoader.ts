@@ -8,7 +8,6 @@ import { CharacterStyle, ParagraphStyle } from '../DataProcessors/Resources/type
 import { Spread } from '../DataProcessors/Spreads/types/Spreads.type';
 import { Story } from '../DataProcessors/Stories/types/Story.type';
 
-type LoadDataType = { dataStoreName: string; data: ProcessorReturnType };
 type MapDataType = Color | Font | CharacterStyle | ParagraphStyle | DocumentPreference | Story | Spread;
 
 type DataLoaderReturnType = {
@@ -16,15 +15,15 @@ type DataLoaderReturnType = {
 };
 
 export class DataLoader {
-  load(options: LoadDataType): DataLoaderReturnType {
+  load(options: ProcessorReturnType): DataLoaderReturnType {
     const storeMap = new Map<string, MapDataType>();
-    const { dataStoreName, data } = options;
+    const { dataStoreName, processedData } = options;
     const result: DataLoaderReturnType = {};
 
-    if (Array.isArray(data)) {
-      data.forEach((element) => storeMap.set(element.Self, element));
+    if (Array.isArray(processedData)) {
+      processedData.forEach((element) => storeMap.set(element.Self, element));
     } else {
-      Object.keys(data).forEach((dataKey) => storeMap.set(dataKey, data[dataKey]));
+      Object.keys(processedData).forEach((dataKey) => storeMap.set(dataKey, processedData[dataKey]));
     }
     result[dataStoreName] = storeMap;
     return result;

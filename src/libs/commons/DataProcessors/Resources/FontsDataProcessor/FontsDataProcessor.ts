@@ -5,7 +5,10 @@ import { ProcessorDataType, ProcessorReturnType } from '../interfaces/DataProces
 
 export class FontsDataProcessor extends AbstractDataProcessor {
   process(data: ProcessorDataType): ProcessorReturnType {
-    if ('idPkg:Fonts' in data) return data['idPkg:Fonts'].FontFamily.flatMap((fontFamily) => fontFamily.Font);
+    if ('idPkg:Fonts' in data) {
+      const processedData = data['idPkg:Fonts'].FontFamily.flatMap((fontFamily) => fontFamily.Font);
+      return { processedData, dataStoreName: 'Fonts' };
+    }
     return super.process(data);
   }
 }

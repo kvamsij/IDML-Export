@@ -6,7 +6,10 @@ import { ProcessorDataType, ProcessorReturnType } from '../interfaces/DataProces
 
 export class PreferenceDataProcessor extends AbstractDataProcessor {
   process(data: ProcessorDataType): ProcessorReturnType {
-    if ('idPkg:Preferences' in data) return { documentPreferences: data['idPkg:Preferences'].DocumentPreference };
+    if ('idPkg:Preferences' in data) {
+      const processedData = { documentPreferences: data['idPkg:Preferences'].DocumentPreference };
+      return { processedData, dataStoreName: 'Preferences' };
+    }
     return super.process(data);
   }
 }

@@ -13,32 +13,32 @@ describe('DataLoader', () => {
 
   it('should be able to call load()', async () => {
     const dataLoader = new DataLoader();
-    const processedData = new DataProcessor(mockData.StylesMockData).process();
+    const { dataStoreName, processedData } = new DataProcessor(mockData.StylesMockData).process();
     const loaderSpy = jest.spyOn(dataLoader, 'load');
-    dataLoader.load({ dataStoreName: 'styles', data: processedData });
+    dataLoader.load({ dataStoreName, processedData });
     expect(loaderSpy).toBeCalledTimes(1);
   });
 
   it('should have been called with provided data to load()', async () => {
     const dataLoader = new DataLoader();
     const dataProcessor = new DataProcessor(mockData.StylesMockData);
-    const processedData = dataProcessor.process();
+    const { dataStoreName, processedData } = dataProcessor.process();
     const loadSpy = jest.spyOn(dataLoader, 'load');
-    dataLoader.load({ dataStoreName: 'styles', data: processedData });
-    expect(loadSpy).toHaveBeenCalledWith({ dataStoreName: 'styles', data: processedData });
+    dataLoader.load({ dataStoreName, processedData });
+    expect(loadSpy).toHaveBeenCalledWith({ dataStoreName, processedData });
   });
 
-  it(`should return an Object with key as 'styles' on load() call`, async () => {
+  it(`should return an Object with key as 'Styles' on load() call`, async () => {
     const dataLoader = new DataLoader();
-    const processedData = new DataProcessor(mockData.StylesMockData).process();
-    const data = dataLoader.load({ dataStoreName: 'styles', data: processedData });
-    expect(data).toHaveProperty('styles');
+    const { dataStoreName, processedData } = new DataProcessor(mockData.StylesMockData).process();
+    const data = dataLoader.load({ dataStoreName, processedData });
+    expect(data).toHaveProperty('Styles');
   });
 
-  it(`should return an Object with key as 'documentPreferences' on load() call`, async () => {
+  it(`should return an Object with key as 'Preferences' on load() call`, async () => {
     const dataLoader = new DataLoader();
-    const processedData = new DataProcessor(mockData.PreferencesMockData).process();
-    const data = dataLoader.load({ dataStoreName: 'documentPreferences', data: processedData });
-    expect(data).toHaveProperty('documentPreferences');
+    const { dataStoreName, processedData } = new DataProcessor(mockData.PreferencesMockData).process();
+    const data = dataLoader.load({ dataStoreName, processedData });
+    expect(data).toHaveProperty('Preferences');
   });
 });

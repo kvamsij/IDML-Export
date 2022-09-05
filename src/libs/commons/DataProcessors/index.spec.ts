@@ -28,7 +28,7 @@ describe('DataProcessor', () => {
   });
 
   it('should return Array of Color[] when passed Graphics data', () => {
-    const processedData = new DataProcessor(parsedData).process();
+    const { processedData } = new DataProcessor(parsedData).process();
     const expectedData = (parsedData as ResourceGraphic)['idPkg:Graphic'].Color;
     expect(processedData).toMatchObject(expectedData);
   });
