@@ -26,7 +26,7 @@ export enum PurpleType {
 }
 export type TartuGecko = {
   '#text': string;
-  type: PurpleType;
+  type: string;
 };
 
 export enum LeadingType {
@@ -35,7 +35,7 @@ export enum LeadingType {
 }
 export type Leading = {
   '#text': number | string;
-  type: LeadingType;
+  type: string;
 };
 export type CharacterStyleProperties = {
   BasedOn: TartuGecko;
@@ -59,11 +59,11 @@ export type CharacterStyle = {
   Imported: string;
   Name: string;
   Properties?: CharacterStyleProperties;
-  KeyboardShortcut?: GradientFillStart;
+  KeyboardShortcut?: string;
   FillColor?: string;
   FontStyle?: string;
   PointSize?: string;
-  KerningMethod?: KerningMethod;
+  KerningMethod?: string;
   Tracking?: string;
   Capitalization?: string;
   KerningValue?: string;
@@ -88,8 +88,8 @@ export type CharacterStyle = {
   GradientFillAngle?: string;
   GradientStrokeLength?: string;
   GradientFillLength?: string;
-  GradientStrokeStart?: GradientFillStart;
-  GradientFillStart?: GradientFillStart;
+  GradientStrokeStart?: string;
+  GradientFillStart?: string;
   Skew?: string;
   OTFOrdinal?: string;
   OTFFraction?: string;
@@ -231,7 +231,7 @@ export type StoryPreference = {
 
 export type ListItem = {
   '#text': number;
-  type: LeadingType;
+  type: string;
 };
 export type InsetSpacing = {
   ListItem: ListItem[];
@@ -341,7 +341,7 @@ export type ObjectStyle = {
   EnableTextWrapAndOthers?: string;
   EnableAnchoredObjectOptions?: string;
   OverprintStroke?: string;
-  KeyboardShortcut?: GradientFillStart;
+  KeyboardShortcut?: string;
   EnableFrameFittingOptions?: string;
   EnableStrokeAndCornerOptions?: string;
 };
@@ -465,8 +465,8 @@ export type ParagraphStyle = {
   GradientFillAngle?: string;
   GradientStrokeLength?: string;
   GradientFillLength?: string;
-  GradientStrokeStart?: GradientFillStart;
-  GradientFillStart?: GradientFillStart;
+  GradientStrokeStart?: string;
+  GradientFillStart?: string;
   Skew?: string;
   RuleAboveLineWeight?: string;
   RuleAboveTint?: string;
@@ -631,7 +631,7 @@ export type ParagraphStyle = {
   OTFStretchedAlternate?: string;
   KeyboardDirection?: string;
   NextStyle?: string;
-  KeyboardShortcut?: GradientFillStart;
+  KeyboardShortcut?: string;
 };
 export type RootParagraphStyleGroup = {
   ParagraphStyle: ParagraphStyle[];
@@ -747,7 +747,7 @@ export type TableStyle = {
   RightColumnRegionCellStyle?: string;
   BodyRegionCellStyle?: string;
   Properties?: ObjectStyleProperties;
-  KeyboardShortcut?: GradientFillStart;
+  KeyboardShortcut?: string;
 };
 export type RootTableStyleGroup = {
   TableStyle: TableStyle[];
