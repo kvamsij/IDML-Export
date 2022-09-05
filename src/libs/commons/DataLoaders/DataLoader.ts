@@ -8,7 +8,6 @@ import { CharacterStyle, ParagraphStyle } from '../DataProcessors/Resources/type
 import { Spread } from '../DataProcessors/Spreads/types/Spreads.type';
 import { Story } from '../DataProcessors/Stories/types/Story.type';
 
-type LoadDataType = { dataStoreName: string; processedData: ProcessorReturnType };
 type MapDataType = Color | Font | CharacterStyle | ParagraphStyle | DocumentPreference | Story | Spread;
 
 type DataLoaderReturnType = {
@@ -16,7 +15,7 @@ type DataLoaderReturnType = {
 };
 
 export class DataLoader {
-  load(options: LoadDataType): DataLoaderReturnType {
+  load(options: ProcessorReturnType): DataLoaderReturnType {
     const storeMap = new Map<string, MapDataType>();
     const { dataStoreName, processedData } = options;
     const result: DataLoaderReturnType = {};
