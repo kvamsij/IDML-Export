@@ -4,7 +4,7 @@ export enum Name {
 
 export type RasterVectorBalance = {
   '#text': number;
-  '@_type': string;
+  type: string;
 };
 
 export type FlattenerPreferenceProperties = {
@@ -13,11 +13,11 @@ export type FlattenerPreferenceProperties = {
 
 export type FlattenerPreference = {
   Properties: FlattenerPreferenceProperties;
-  '@_LineArtAndTextResolution': string;
-  '@_GradientAndMeshResolution': string;
-  '@_ClipComplexRegions': string;
-  '@_ConvertAllStrokesToOutlines': string;
-  '@_ConvertAllTextToOutlines': string;
+  LineArtAndTextResolution: string;
+  GradientAndMeshResolution: string;
+  ClipComplexRegions: string;
+  ConvertAllStrokesToOutlines: string;
+  ConvertAllTextToOutlines: string;
 };
 
 export enum PageTransitionType {
@@ -25,36 +25,36 @@ export enum PageTransitionType {
 }
 
 export type TextFramePreference = {
-  '@_TextColumnFixedWidth': string;
-  '@_VerticalJustification'?: string;
-  '@_TextColumnMaxWidth': string;
-  '@_AutoSizingType': string;
-  '@_AutoSizingReferencePoint': string;
-  '@_UseMinimumHeightForAutoSizing': string;
-  '@_MinimumHeightForAutoSizing': string;
-  '@_UseMinimumWidthForAutoSizing': string;
-  '@_MinimumWidthForAutoSizing': string;
-  '@_UseNoLineBreaksForAutoSizing': string;
+  TextColumnFixedWidth: string;
+  VerticalJustification?: string;
+  TextColumnMaxWidth: string;
+  AutoSizingType: string;
+  AutoSizingReferencePoint: string;
+  UseMinimumHeightForAutoSizing: string;
+  MinimumHeightForAutoSizing: string;
+  UseMinimumWidthForAutoSizing: string;
+  MinimumWidthForAutoSizing: string;
+  UseNoLineBreaksForAutoSizing: string;
 };
 
 export type PageColor = {
   '#text': string;
-  '@_type': string;
+  type: string;
 };
 export type GridDataInformationProperties = {
   AppliedFont: PageColor;
 };
 export type GridDataInformation = {
   Properties: GridDataInformationProperties;
-  '@_FontStyle': string;
-  '@_PointSize': string;
-  '@_CharacterAki': string;
-  '@_LineAki': string;
-  '@_HorizontalScale': string;
-  '@_VerticalScale': string;
-  '@_LineAlignment': string;
-  '@_GridAlignment': string;
-  '@_CharacterAlignment': string;
+  FontStyle: string;
+  PointSize: string;
+  CharacterAki: string;
+  LineAki: string;
+  HorizontalScale: string;
+  VerticalScale: string;
+  LineAlignment: string;
+  GridAlignment: string;
+  CharacterAlignment: string;
 };
 
 export type GuideProperties = {
@@ -62,37 +62,37 @@ export type GuideProperties = {
 };
 export type Guide = {
   Properties: GuideProperties;
-  '@_Self': string;
-  '@_OverriddenPageItemProps': string;
-  '@_Orientation': string;
-  '@_Location': string;
-  '@_FitToPage': string;
-  '@_ViewThreshold': string;
-  '@_Locked': string;
-  '@_ItemLayer': string;
-  '@_PageIndex': string;
-  '@_GuideType': string;
-  '@_GuideZone': string;
+  Self: string;
+  OverriddenPageItemProps: string;
+  Orientation: string;
+  Location: string;
+  FitToPage: string;
+  ViewThreshold: string;
+  Locked: string;
+  ItemLayer: string;
+  PageIndex: string;
+  GuideType: string;
+  GuideZone: string;
 };
 
 export type MarginPreference = {
-  '@_ColumnCount': string;
-  '@_ColumnGutter': string;
-  '@_Top': string;
-  '@_Bottom': string;
-  '@_Left': string;
-  '@_Right': string;
-  '@_ColumnDirection': string;
-  '@_ColumnsPositions': string;
+  ColumnCount: string;
+  ColumnGutter: string;
+  Top: string;
+  Bottom: string;
+  Left: string;
+  Right: string;
+  ColumnDirection: string;
+  ColumnsPositions: string;
 };
 
 export type ListItem = {
-  '@_type': string;
+  type: string;
   '#text'?: boolean | number | string;
 };
 export type Descriptor = {
   ListItem: ListItem[];
-  '@_type': string;
+  type: string;
 };
 export type PageProperties = {
   Descriptor: Descriptor;
@@ -103,63 +103,63 @@ export type Page = {
   MarginPreference: MarginPreference;
   GridDataInformation: GridDataInformation;
   Guide: Guide[];
-  '@_Self': string;
-  '@_AppliedAlternateLayout': string;
-  '@_LayoutRule': string;
-  '@_SnapshotBlendingMode': string;
-  '@_OptionalPage': string;
-  '@_GeometricBounds': string;
-  '@_ItemTransform': string;
-  '@_Name': string;
-  '@_AppliedTrapPreset': string;
-  '@_OverrideList': string;
-  '@_AppliedMaster': string;
-  '@_MasterPageTransform': string;
-  '@_TabOrder': string;
-  '@_GridStartingPoint': string;
-  '@_UseMasterGrid': string;
+  Self: string;
+  AppliedAlternateLayout: string;
+  LayoutRule: string;
+  SnapshotBlendingMode: string;
+  OptionalPage: string;
+  GeometricBounds: string;
+  ItemTransform: string;
+  Name: string;
+  AppliedTrapPreset: string;
+  OverrideList: string;
+  AppliedMaster: string;
+  MasterPageTransform: string;
+  TabOrder: string;
+  GridStartingPoint: string;
+  UseMasterGrid: string;
 };
 
 export type ClippingPathSettings = {
-  '@_ClippingType': PageTransitionType;
-  '@_InvertPath': string;
-  '@_IncludeInsideEdges': string;
-  '@_RestrictToFrame': string;
-  '@_UseHighResolutionImage': string;
-  '@_Threshold': string;
-  '@_Tolerance': string;
-  '@_InsetFrame': string;
-  '@_AppliedPathName': Name;
-  '@_Index': string;
+  ClippingType: PageTransitionType;
+  InvertPath: string;
+  IncludeInsideEdges: string;
+  RestrictToFrame: string;
+  UseHighResolutionImage: string;
+  Threshold: string;
+  Tolerance: string;
+  InsetFrame: string;
+  AppliedPathName: Name;
+  Index: string;
 };
 
 export type ImageIOPreference = {
-  '@_ApplyPhotoshopClippingPath': string;
-  '@_AllowAutoEmbedding': string;
-  '@_AlphaChannelName': Name;
+  ApplyPhotoshopClippingPath: string;
+  AllowAutoEmbedding: string;
+  AlphaChannelName: Name;
 };
 
 export type Link = {
-  '@_Self': string;
-  '@_AssetURL': Name;
-  '@_AssetID': Name;
-  '@_LinkResourceURI': string;
-  '@_LinkResourceFormat': string;
-  '@_StoredState': string;
-  '@_LinkClassID': string;
-  '@_LinkClientID': string;
-  '@_LinkResourceModified': string;
-  '@_LinkObjectModified': string;
-  '@_ShowInUI': string;
-  '@_CanEmbed': string;
-  '@_CanUnembed': string;
-  '@_CanPackage': string;
-  '@_ImportPolicy': string;
-  '@_ExportPolicy': string;
-  '@_LinkImportStamp': string;
-  '@_LinkImportModificationTime': Date;
-  '@_LinkImportTime': Date;
-  '@_LinkResourceSize': string;
+  Self: string;
+  AssetURL: Name;
+  AssetID: Name;
+  LinkResourceURI: string;
+  LinkResourceFormat: string;
+  StoredState: string;
+  LinkClassID: string;
+  LinkClientID: string;
+  LinkResourceModified: string;
+  LinkObjectModified: string;
+  ShowInUI: string;
+  CanEmbed: string;
+  CanUnembed: string;
+  CanPackage: string;
+  ImportPolicy: string;
+  ExportPolicy: string;
+  LinkImportStamp: string;
+  LinkImportModificationTime: Date;
+  LinkImportTime: Date;
+  LinkResourceSize: string;
 };
 
 export type MetadataPacketPreferenceProperties = {
@@ -170,10 +170,10 @@ export type MetadataPacketPreference = {
 };
 
 export type GraphicBounds = {
-  '@_Left': string;
-  '@_Top': string;
-  '@_Right': string;
-  '@_Bottom': string;
+  Left: string;
+  Top: string;
+  Right: string;
+  Bottom: string;
 };
 export type ImageProperties = {
   Profile: PageColor;
@@ -185,9 +185,9 @@ export enum TextWrapSide {
 }
 
 export type ContourOption = {
-  '@_ContourType': string;
-  '@_IncludeInsideEdges': string;
-  '@_ContourPathName': Name;
+  ContourType: string;
+  IncludeInsideEdges: string;
+  ContourPathName: Name;
 };
 
 export type TextWrapPreferenceProperties = {
@@ -197,10 +197,10 @@ export type TextWrapPreferenceProperties = {
 export type TextWrapPreference = {
   Properties: TextWrapPreferenceProperties;
   ContourOption?: ContourOption;
-  '@_Inverse': string;
-  '@_ApplyToMasterPageOnly': string;
-  '@_TextWrapSide': TextWrapSide;
-  '@_TextWrapMode': PageTransitionType;
+  Inverse: string;
+  ApplyToMasterPageOnly: string;
+  TextWrapSide: TextWrapSide;
+  TextWrapMode: PageTransitionType;
 };
 export type Image = {
   Properties: ImageProperties;
@@ -209,33 +209,33 @@ export type Image = {
   Link: Link;
   ClippingPathSettings: ClippingPathSettings;
   ImageIOPreference: ImageIOPreference;
-  '@_Self': string;
-  '@_Space': string;
-  '@_ActualPpi': string;
-  '@_EffectivePpi': string;
-  '@_ImageRenderingIntent': string;
-  '@_OverriddenPageItemProps': string;
-  '@_LocalDisplaySetting': string;
-  '@_ImageTypeName': string;
-  '@_AppliedObjectStyle': string;
-  '@_ItemTransform': string;
-  '@_ParentInterfaceChangeCount': string;
-  '@_TargetInterfaceChangeCount': string;
-  '@_LastUpdatedInterfaceChangeCount': string;
-  '@_HorizontalLayoutConstraints': string;
-  '@_VerticalLayoutConstraints': string;
-  '@_GradientFillStart': string;
-  '@_GradientFillLength': string;
-  '@_GradientFillAngle': string;
-  '@_GradientFillHiliteLength': string;
-  '@_GradientFillHiliteAngle': string;
-  '@_Visible': string;
-  '@_Name': Name;
+  Self: string;
+  Space: string;
+  ActualPpi: string;
+  EffectivePpi: string;
+  ImageRenderingIntent: string;
+  OverriddenPageItemProps: string;
+  LocalDisplaySetting: string;
+  ImageTypeName: string;
+  AppliedObjectStyle: string;
+  ItemTransform: string;
+  ParentInterfaceChangeCount: string;
+  TargetInterfaceChangeCount: string;
+  LastUpdatedInterfaceChangeCount: string;
+  HorizontalLayoutConstraints: string;
+  VerticalLayoutConstraints: string;
+  GradientFillStart: string;
+  GradientFillLength: string;
+  GradientFillAngle: string;
+  GradientFillHiliteLength: string;
+  GradientFillHiliteAngle: string;
+  Visible: string;
+  Name: Name;
 };
 
 export type InCopyExportOption = {
-  '@_IncludeGraphicProxies': string;
-  '@_IncludeAllResources': string;
+  IncludeGraphicProxies: string;
+  IncludeAllResources: string;
 };
 
 export enum TextSourceType {
@@ -287,8 +287,8 @@ export enum SpaceUnit {
 }
 
 export type MetadataProperty = {
-  '@_NamespacePrefix': Name;
-  '@_PropertyPath': Name;
+  NamespacePrefix: Name;
+  PropertyPath: Name;
 };
 export type ObjectExportOptionProperties = {
   AltMetadataProperty: MetadataProperty;
@@ -296,55 +296,55 @@ export type ObjectExportOptionProperties = {
 };
 export type ObjectExportOption = {
   Properties: ObjectExportOptionProperties;
-  '@_AltTextSourceType': TextSourceType;
-  '@_ActualTextSourceType': TextSourceType;
-  '@_CustomAltText': Name;
-  '@_CustomActualText': Name;
-  '@_ApplyTagType': ApplyTagType;
-  '@_CustomImageConversion': string;
-  '@_ImageConversionType': ImageConversionType;
-  '@_CustomImageSizeOption': CustomImageSizeOption;
-  '@_ImageExportResolution': ImageExportResolution;
-  '@_GIFOptionsPalette': GIFOptionsPalette;
-  '@_GIFOptionsInterlaced': string;
-  '@_JPEGOptionsQuality': JPEGOptionsQuality;
-  '@_JPEGOptionsFormat': JPEGOptionsFormat;
-  '@_ImageAlignment': ImageAlignment;
-  '@_ImageSpaceBefore': string;
-  '@_ImageSpaceAfter': string;
-  '@_UseImagePageBreak': string;
-  '@_ImagePageBreak': ImagePageBreak;
-  '@_CustomImageAlignment': string;
-  '@_SpaceUnit': SpaceUnit;
-  '@_CustomLayout': string;
-  '@_CustomLayoutType': CustomLayoutType;
+  AltTextSourceType: TextSourceType;
+  ActualTextSourceType: TextSourceType;
+  CustomAltText: Name;
+  CustomActualText: Name;
+  ApplyTagType: ApplyTagType;
+  CustomImageConversion: string;
+  ImageConversionType: ImageConversionType;
+  CustomImageSizeOption: CustomImageSizeOption;
+  ImageExportResolution: ImageExportResolution;
+  GIFOptionsPalette: GIFOptionsPalette;
+  GIFOptionsInterlaced: string;
+  JPEGOptionsQuality: JPEGOptionsQuality;
+  JPEGOptionsFormat: JPEGOptionsFormat;
+  ImageAlignment: ImageAlignment;
+  ImageSpaceBefore: string;
+  ImageSpaceAfter: string;
+  UseImagePageBreak: string;
+  ImagePageBreak: ImagePageBreak;
+  CustomImageAlignment: string;
+  SpaceUnit: SpaceUnit;
+  CustomLayout: string;
+  CustomLayoutType: CustomLayoutType;
 };
 
 export type GraphicLayer = {
-  '@_Self': string;
-  '@_Name': string;
-  '@_OriginalVisibility': string;
-  '@_CurrentVisibility': string;
-  '@_SeparatorLayer': string;
-  '@_AdjustmentLayer': string;
-  '@_FXLayer': string;
-  '@_Locked': string;
-  '@_HasViewState': string;
-  '@_ViewState': string;
-  '@_HasExportState': string;
-  '@_ExportState': string;
-  '@_HasPrintState': string;
-  '@_PrintState': string;
-  '@_Id': string;
+  Self: string;
+  Name: string;
+  OriginalVisibility: string;
+  CurrentVisibility: string;
+  SeparatorLayer: string;
+  AdjustmentLayer: string;
+  FXLayer: string;
+  Locked: string;
+  HasViewState: string;
+  ViewState: string;
+  HasExportState: string;
+  ExportState: string;
+  HasPrintState: string;
+  PrintState: string;
+  Id: string;
 };
 export type GraphicLayerOption = {
   GraphicLayer: GraphicLayer;
-  '@_UpdateLinkOption': string;
+  UpdateLinkOption: string;
 };
 export type PDFAttribute = {
-  '@_PageNumber': string;
-  '@_PDFCrop': string;
-  '@_TransparentBackground': string;
+  PageNumber: string;
+  PDFCrop: string;
+  TransparentBackground: string;
 };
 
 export type PDFProperties = {
@@ -358,35 +358,35 @@ export type PDF = {
   Link: Link;
   ClippingPathSettings: ClippingPathSettings;
   GraphicLayerOption: GraphicLayerOption;
-  '@_Self': string;
-  '@_GrayVectorPolicy': string;
-  '@_RGBVectorPolicy': string;
-  '@_CMYKVectorPolicy': string;
-  '@_OverriddenPageItemProps': string;
-  '@_LocalDisplaySetting': string;
-  '@_ImageTypeName': string;
-  '@_AppliedObjectStyle': string;
-  '@_ItemTransform': string;
-  '@_ParentInterfaceChangeCount': string;
-  '@_TargetInterfaceChangeCount': string;
-  '@_LastUpdatedInterfaceChangeCount': string;
-  '@_HorizontalLayoutConstraints': string;
-  '@_VerticalLayoutConstraints': string;
-  '@_Visible': string;
-  '@_Name': Name;
+  Self: string;
+  GrayVectorPolicy: string;
+  RGBVectorPolicy: string;
+  CMYKVectorPolicy: string;
+  OverriddenPageItemProps: string;
+  LocalDisplaySetting: string;
+  ImageTypeName: string;
+  AppliedObjectStyle: string;
+  ItemTransform: string;
+  ParentInterfaceChangeCount: string;
+  TargetInterfaceChangeCount: string;
+  LastUpdatedInterfaceChangeCount: string;
+  HorizontalLayoutConstraints: string;
+  VerticalLayoutConstraints: string;
+  Visible: string;
+  Name: Name;
 };
 
 export type PathPointType = {
-  '@_Anchor': string;
-  '@_LeftDirection': string;
-  '@_RightDirection': string;
+  Anchor: string;
+  LeftDirection: string;
+  RightDirection: string;
 };
 export type PathPointArray = {
   PathPointType: PathPointType[];
 };
 export type GeometryPathType = {
   PathPointArray: PathPointArray;
-  '@_PathOpen': string;
+  PathOpen: string;
 };
 export type PathGeometry = {
   GeometryPathType: GeometryPathType;
@@ -399,34 +399,34 @@ export type TextFrame = {
   TextFramePreference: TextFramePreference;
   TextWrapPreference: TextWrapPreference;
   ObjectExportOption: ObjectExportOption;
-  '@_Self': string;
-  '@_ParentStory': string;
-  '@_PreviousTextFrame': string;
-  '@_NextTextFrame': string;
-  '@_ContentType': string;
-  '@_ParentInterfaceChangeCount': string;
-  '@_TargetInterfaceChangeCount': string;
-  '@_LastUpdatedInterfaceChangeCount': string;
-  '@_OverriddenPageItemProps': string;
-  '@_HorizontalLayoutConstraints': string;
-  '@_VerticalLayoutConstraints': string;
-  '@_GradientFillStart': string;
-  '@_GradientFillLength': string;
-  '@_GradientFillAngle': string;
-  '@_GradientStrokeStart': string;
-  '@_GradientStrokeLength': string;
-  '@_GradientStrokeAngle': string;
-  '@_ItemLayer': string;
-  '@_Locked': string;
-  '@_LocalDisplaySetting': string;
-  '@_GradientFillHiliteLength': string;
-  '@_GradientFillHiliteAngle': string;
-  '@_GradientStrokeHiliteLength': string;
-  '@_GradientStrokeHiliteAngle': string;
-  '@_AppliedObjectStyle': string;
-  '@_Visible': string;
-  '@_Name': Name;
-  '@_ItemTransform': string;
+  Self: string;
+  ParentStory: string;
+  PreviousTextFrame: string;
+  NextTextFrame: string;
+  ContentType: string;
+  ParentInterfaceChangeCount: string;
+  TargetInterfaceChangeCount: string;
+  LastUpdatedInterfaceChangeCount: string;
+  OverriddenPageItemProps: string;
+  HorizontalLayoutConstraints: string;
+  VerticalLayoutConstraints: string;
+  GradientFillStart: string;
+  GradientFillLength: string;
+  GradientFillAngle: string;
+  GradientStrokeStart: string;
+  GradientStrokeLength: string;
+  GradientStrokeAngle: string;
+  ItemLayer: string;
+  Locked: string;
+  LocalDisplaySetting: string;
+  GradientFillHiliteLength: string;
+  GradientFillHiliteAngle: string;
+  GradientStrokeHiliteLength: string;
+  GradientStrokeHiliteAngle: string;
+  AppliedObjectStyle: string;
+  Visible: string;
+  Name: Name;
+  ItemTransform: string;
 };
 
 export type Rectangle = {
@@ -435,35 +435,35 @@ export type Rectangle = {
   InCopyExportOption: InCopyExportOption;
   ObjectExportOption: ObjectExportOption;
   Image?: Image;
-  '@_Self': string;
-  '@_ContentType': string;
-  '@_StoryTitle': Name;
-  '@_ParentInterfaceChangeCount': string;
-  '@_TargetInterfaceChangeCount': string;
-  '@_LastUpdatedInterfaceChangeCount': string;
-  '@_OverriddenPageItemProps': string;
-  '@_HorizontalLayoutConstraints': string;
-  '@_VerticalLayoutConstraints': string;
-  '@_GradientFillStart': string;
-  '@_GradientFillLength': string;
-  '@_GradientFillAngle': string;
-  '@_GradientStrokeStart': string;
-  '@_GradientStrokeLength': string;
-  '@_GradientStrokeAngle': string;
-  '@_ItemLayer': string;
-  '@_Locked': string;
-  '@_LocalDisplaySetting': string;
-  '@_GradientFillHiliteLength': string;
-  '@_GradientFillHiliteAngle': string;
-  '@_GradientStrokeHiliteLength': string;
-  '@_GradientStrokeHiliteAngle': string;
-  '@_AppliedObjectStyle': string;
-  '@_Visible': string;
-  '@_Name': Name;
-  '@_ItemTransform': string;
-  '@_FillColor'?: string;
-  '@_StrokeWeight'?: string;
-  '@_MiterLimit'?: string;
+  Self: string;
+  ContentType: string;
+  StoryTitle: Name;
+  ParentInterfaceChangeCount: string;
+  TargetInterfaceChangeCount: string;
+  LastUpdatedInterfaceChangeCount: string;
+  OverriddenPageItemProps: string;
+  HorizontalLayoutConstraints: string;
+  VerticalLayoutConstraints: string;
+  GradientFillStart: string;
+  GradientFillLength: string;
+  GradientFillAngle: string;
+  GradientStrokeStart: string;
+  GradientStrokeLength: string;
+  GradientStrokeAngle: string;
+  ItemLayer: string;
+  Locked: string;
+  LocalDisplaySetting: string;
+  GradientFillHiliteLength: string;
+  GradientFillHiliteAngle: string;
+  GradientStrokeHiliteLength: string;
+  GradientStrokeHiliteAngle: string;
+  AppliedObjectStyle: string;
+  Visible: string;
+  Name: Name;
+  ItemTransform: string;
+  FillColor?: string;
+  StrokeWeight?: string;
+  MiterLimit?: string;
   PDF?: PDF;
 };
 
@@ -472,21 +472,21 @@ export type Spread = {
   Page: Page;
   Rectangle: Rectangle[];
   TextFrame: TextFrame[];
-  '@_Self': string;
-  '@_FlattenerOverride': string;
-  '@_AllowPageShuffle': string;
-  '@_ItemTransform': string;
-  '@_ShowMasterItems': string;
-  '@_PageCount': string;
-  '@_BindingLocation': string;
-  '@_PageTransitionType': PageTransitionType;
-  '@_PageTransitionDirection': string;
-  '@_PageTransitionDuration': string;
+  Self: string;
+  FlattenerOverride: string;
+  AllowPageShuffle: string;
+  ItemTransform: string;
+  ShowMasterItems: string;
+  PageCount: string;
+  BindingLocation: string;
+  PageTransitionType: PageTransitionType;
+  PageTransitionDirection: string;
+  PageTransitionDuration: string;
 };
 export type IDPkgSpread = {
   Spread: Spread;
-  '@_xmlns:idPkg': string;
-  '@_DOMVersion': string;
+  'xmlns:idPkg': string;
+  DOMVersion: string;
 };
 export type IDMLSpread = {
   'idPkg:Spread': IDPkgSpread;
