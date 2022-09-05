@@ -5,10 +5,11 @@ import { Font } from '../DataProcessors/Resources/types/Fonts.type';
 import { Color } from '../DataProcessors/Resources/types/Graphic.type';
 import { DocumentPreference } from '../DataProcessors/Resources/types/Preferences.type';
 import { CharacterStyle, ParagraphStyle } from '../DataProcessors/Resources/types/Styles.type';
+import { Spread } from '../DataProcessors/Spreads/types/Spreads.type';
 import { Story } from '../DataProcessors/Stories/types/Story.type';
 
 type LoadDataType = { dataStoreName: string; data: ProcessorReturnType };
-type MapDataType = Color | Font | CharacterStyle | ParagraphStyle | DocumentPreference | Story;
+type MapDataType = Color | Font | CharacterStyle | ParagraphStyle | DocumentPreference | Story | Spread;
 
 type DataLoaderReturnType = {
   [key: string]: Map<string, MapDataType>;
