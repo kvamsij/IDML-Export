@@ -10,22 +10,16 @@ import { Story } from '../DataProcessors/Stories/types/Story.type';
 
 type MapDataType = Color | Font | CharacterStyle | ParagraphStyle | DocumentPreference | Story | Spread;
 
-type DataLoaderReturnType = {
-  [key: string]: Map<string, MapDataType>;
-};
+type DataLoaderDataType = { dataStore: Map<string, MapDataType>; processedData: ProcessorReturnType };
 
-export class DataLoader {
-  load(options: ProcessorReturnType): DataLoaderReturnType {
-    const storeMap = new Map<string, MapDataType>();
-    const { dataStoreName, processedData } = options;
-    const result: DataLoaderReturnType = {};
+export class DataLoaderClient {
+  load(options: DataLoaderDataType): void {
+    const { dataStore, processedData } = options;
 
     if (Array.isArray(processedData)) {
-      processedData.forEach((element) => storeMap.set(element.Self, element));
+      processedData.forEach((element) => dataStore.set(element.Self, element));
     } else {
-      Object.keys(processedData).forEach((dataKey) => storeMap.set(dataKey, processedData[dataKey]));
+      Object.keys(processedData).forEach((dataKey) => dataStore.set(dataKey, processedData[dataKey]));
     }
-    result[dataStoreName] = storeMap;
-    return result;
   }
 }
