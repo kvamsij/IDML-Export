@@ -7,8 +7,7 @@ import { ProcessorDataType, ProcessorReturnType } from '../Resources/interfaces/
 export class StoryDataProcessor extends AbstractDataProcessor {
   process(data: ProcessorDataType): ProcessorReturnType {
     if ('idPkg:Story' in data) {
-      const processedData = [data['idPkg:Story'].Story];
-      return { processedData, dataStoreName: 'Story' };
+      return [data['idPkg:Story'].Story];
     }
     return super.process(data);
   }

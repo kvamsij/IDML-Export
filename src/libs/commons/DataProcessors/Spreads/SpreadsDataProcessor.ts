@@ -4,8 +4,7 @@ import { ProcessorDataType, ProcessorReturnType } from '../Resources/interfaces/
 export class SpreadsDataProcessor extends AbstractDataProcessor {
   process(data: ProcessorDataType): ProcessorReturnType {
     if ('idPkg:Spread' in data) {
-      const processedData = [data['idPkg:Spread'].Spread];
-      return { processedData, dataStoreName: 'Spread' };
+      return [data['idPkg:Spread'].Spread];
     }
     return super.process(data);
   }
