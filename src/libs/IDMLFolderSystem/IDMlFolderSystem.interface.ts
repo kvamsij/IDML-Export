@@ -1,6 +1,14 @@
-import { Document } from './designMap.type';
+export type IDMLFilePaths = {
+  src: string;
+};
 
-export type GetPathsReturnType = Partial<Document>;
+export type GetPathsReturnType = {
+  resourcesPaths: {
+    [key: string]: IDMLFilePaths;
+  };
+  storyPaths: Array<IDMLFilePaths>;
+  spreadPaths: Array<IDMLFilePaths>;
+};
 
 export interface IDMLFolderSystemInterface {
   getPaths(): Promise<GetPathsReturnType>;
