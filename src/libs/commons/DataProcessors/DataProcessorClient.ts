@@ -1,3 +1,4 @@
+import { DataProcessorClientInterface } from './DataProcessorClientInterface';
 import { FontsDataProcessor } from './Resources/FontsDataProcessor/FontsDataProcessor';
 import { GraphicDataProcessor } from './Resources/GraphicDataProcessor/GraphicDataProcessor';
 import {
@@ -10,7 +11,7 @@ import { StylesDataProcessor } from './Resources/StylesDataProcessor/StylesDataP
 import { SpreadsDataProcessor } from './Spreads/SpreadsDataProcessor';
 import { StoryDataProcessor } from './Stories/StoryDataProcessor';
 
-export class DataProcessor {
+export class DataProcessorClient implements DataProcessorClientInterface {
   private stylesDataProcessor: DataProcessorInterface;
 
   private graphicDataProcessor: DataProcessorInterface;
@@ -23,7 +24,7 @@ export class DataProcessor {
 
   private spreadDataProcessor: DataProcessorInterface;
 
-  constructor(private data: ProcessorDataType) {
+  constructor() {
     this.stylesDataProcessor = new StylesDataProcessor();
     this.graphicDataProcessor = new GraphicDataProcessor();
     this.preferenceDataProcessor = new PreferenceDataProcessor();
@@ -40,7 +41,7 @@ export class DataProcessor {
       .setNext(this.spreadDataProcessor);
   }
 
-  process(): ProcessorReturnType {
-    return this.stylesDataProcessor.process(this.data);
+  process(data: ProcessorDataType): ProcessorReturnType {
+    return this.stylesDataProcessor.process(data);
   }
 }
