@@ -52,15 +52,8 @@ describe('Story Data Processor', () => {
       const { Story } = (parsedData as IDMLStory)['idPkg:Story'];
 
       const expectedData = [Story];
-      const { processedData } = storyDataProcessor.process(parsedData as IDMLStory);
+      const processedData = storyDataProcessor.process(parsedData as IDMLStory);
       expect(processedData).toMatchObject(expectedData);
-    });
-
-    it('should return dataStoreName as Story', async () => {
-      const storyDataProcessor = new StoryDataProcessor();
-
-      const { dataStoreName } = storyDataProcessor.process(parsedData as IDMLStory);
-      expect(dataStoreName).toStrictEqual('Story');
     });
   });
 });

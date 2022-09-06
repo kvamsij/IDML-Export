@@ -55,14 +55,8 @@ describe('Styles Data Processor', () => {
       } = (parsedData as IDMLStyles)['idPkg:Styles'];
 
       const expectedData = [...CharacterStyle, ...ParagraphStyle];
-      const { processedData } = preferences.process(parsedData);
+      const processedData = preferences.process(parsedData);
       expect(processedData).toMatchObject(expectedData);
-    });
-
-    it('should return dataStoreName as Styles', async () => {
-      const preferences = new StylesDataProcessor();
-      const { dataStoreName } = preferences.process(parsedData);
-      expect(dataStoreName).toStrictEqual('Styles');
     });
   });
 });
