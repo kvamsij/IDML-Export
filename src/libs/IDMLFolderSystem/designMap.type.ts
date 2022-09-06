@@ -1,37 +1,37 @@
-export interface Aid {
-  '@_style': string;
-  '@_type': string;
-  '@_readerVersion': string;
-  '@_featureSet': string;
-  '@_product': string;
-}
+export type Aid = {
+  style: string;
+  type: string;
+  readerVersion: string;
+  featureSet: string;
+  product: string;
+};
 
-export interface XML {
-  '@_version': string;
-  '@_encoding': string;
-  '@_standalone': string;
-}
+export type XML = {
+  version: string;
+  encoding: string;
+  standalone: string;
+};
 
 export enum Type {
   Enumeration = 'enumeration',
   String = 'string',
 }
 
-export interface FrameColor {
+export type FrameColor = {
   '#text': string;
-  '@_type': Type;
-}
-export interface ABulletProperties {
+  type: Type;
+};
+export type ABulletProperties = {
   BulletsFont: FrameColor;
   BulletsFontStyle: FrameColor;
-}
+};
 
-export interface ABullet {
+export type ABullet = {
   Properties: ABulletProperties;
-  '@_Self': string;
-  '@_CharacterType': string;
-  '@_CharacterValue': string;
-}
+  Self: string;
+  CharacterType: string;
+  CharacterValue: string;
+};
 
 export enum FilePath {
   Empty = '"',
@@ -41,183 +41,183 @@ export enum FilePath {
   Page = 'page',
 }
 
-export interface AssignmentProperties {
+export type AssignmentProperties = {
   FrameColor: FrameColor;
-}
-export interface Assignment {
+};
+export type Assignment = {
   Properties: AssignmentProperties;
-  '@_Self': string;
-  '@_Name': string;
-  '@_UserName': FilePath;
-  '@_ExportOptions': string;
-  '@_IncludeLinksWhenPackage': string;
-  '@_FilePath': FilePath;
-}
+  Self: string;
+  Name: string;
+  UserName: FilePath;
+  ExportOptions: string;
+  IncludeLinksWhenPackage: string;
+  FilePath: FilePath;
+};
 
 export enum ActiveConditionSet {
   N = 'n',
 }
-export interface ConditionalTextPreference {
-  '@_ShowConditionIndicators': string;
-  '@_ActiveConditionSet': ActiveConditionSet;
-}
+export type ConditionalTextPreference = {
+  ShowConditionIndicators: string;
+  ActiveConditionSet: ActiveConditionSet;
+};
 
-export interface BuildingBlockElement {
-  '@_Self': string;
-  '@_BlockType': string;
-  '@_AppliedCharacterStyle': ActiveConditionSet;
-  '@_CustomText': FilePath;
-  '@_AppliedDelimiter': FilePath;
-  '@_IncludeDelimiter': string;
-}
-export interface CrossReferenceFormat {
+export type BuildingBlockElement = {
+  Self: string;
+  BlockType: string;
+  AppliedCharacterStyle: ActiveConditionSet;
+  CustomText: FilePath;
+  AppliedDelimiter: FilePath;
+  IncludeDelimiter: string;
+};
+export type CrossReferenceFormat = {
   BuildingBlock: BuildingBlockElement[] | BuildingBlockElement;
-  '@_Self': string;
-  '@_Name': string;
-  '@_AppliedCharacterStyle': ActiveConditionSet;
-}
+  Self: string;
+  Name: string;
+  AppliedCharacterStyle: ActiveConditionSet;
+};
 
-export interface DocumentUserProperties {
+export type DocumentUserProperties = {
   UserColor: FrameColor;
-}
-export interface DocumentUser {
+};
+export type DocumentUser = {
   Properties: DocumentUserProperties;
-  '@_Self': string;
-  '@_UserName': string;
-}
+  Self: string;
+  UserName: string;
+};
 
-export interface IndexingSortOption {
-  '@_Self': string;
-  '@_Name': string;
-  '@_Include': string;
-  '@_Priority': string;
-  '@_HeaderType': string;
-}
+export type IndexingSortOption = {
+  Self: string;
+  Name: string;
+  Include: string;
+  Priority: string;
+  HeaderType: string;
+};
 
-export interface LayerProperties {
+export type LayerProperties = {
   LayerColor: FrameColor;
-}
+};
 
-export interface Layer {
+export type Layer = {
   Properties: LayerProperties;
-  '@_Self': string;
-  '@_Name': string;
-  '@_Visible': string;
-  '@_Locked': string;
-  '@_IgnoreWrap': string;
-  '@_ShowGuides': string;
-  '@_LockGuides': string;
-  '@_UI': string;
-  '@_Expendable': string;
-  '@_Printable': string;
-}
+  Self: string;
+  Name: string;
+  Visible: string;
+  Locked: string;
+  IgnoreWrap: string;
+  ShowGuides: string;
+  LockGuides: string;
+  UI: string;
+  Expendable: string;
+  Printable: string;
+};
 
-export interface LinkedPageItemOption {
-  '@_UpdateLinkWhileSaving': string;
-  '@_WarnOnUpdateOfEditedPageItem': string;
-  '@_PreserveSizeAndShape': string;
-  '@_PreserveAppearance': string;
-  '@_PreserveInteractivity': string;
-  '@_PreserveFrameContent': string;
-  '@_PreserveOthers': string;
-}
+export type LinkedPageItemOption = {
+  UpdateLinkWhileSaving: string;
+  WarnOnUpdateOfEditedPageItem: string;
+  PreserveSizeAndShape: string;
+  PreserveAppearance: string;
+  PreserveInteractivity: string;
+  PreserveFrameContent: string;
+  PreserveOthers: string;
+};
 
-export interface LinkedStoryOption {
-  '@_UpdateWhileSaving': string;
-  '@_WarnOnUpdateOfEditedStory': string;
-  '@_RemoveForcedLineBreaks': string;
-  '@_ApplyStyleMappings': string;
-}
+export type LinkedStoryOption = {
+  UpdateWhileSaving: string;
+  WarnOnUpdateOfEditedStory: string;
+  RemoveForcedLineBreaks: string;
+  ApplyStyleMappings: string;
+};
 
-export interface GridDataInformationProperties {
+export type GridDataInformationProperties = {
   AppliedFont: FrameColor;
-}
+};
 
-export interface GridDataInformation {
+export type GridDataInformation = {
   Properties: GridDataInformationProperties;
-  '@_FontStyle': string;
-  '@_PointSize': string;
-  '@_CharacterAki': string;
-  '@_LineAki': string;
-  '@_HorizontalScale': string;
-  '@_VerticalScale': string;
-  '@_LineAlignment': string;
-  '@_GridAlignment': string;
-  '@_CharacterAlignment': string;
-}
-export interface NamedGrid {
+  FontStyle: string;
+  PointSize: string;
+  CharacterAki: string;
+  LineAki: string;
+  HorizontalScale: string;
+  VerticalScale: string;
+  LineAlignment: string;
+  GridAlignment: string;
+  CharacterAlignment: string;
+};
+export type NamedGrid = {
   GridDataInformation: GridDataInformation;
-  '@_Self': string;
-  '@_Name': string;
-}
+  Self: string;
+  Name: string;
+};
 
-export interface NumberingList {
-  '@_Self': string;
-  '@_Name': string;
-  '@_ContinueNumbersAcrossStories': string;
-  '@_ContinueNumbersAcrossDocuments': string;
-}
-export interface SectionProperties {
+export type NumberingList = {
+  Self: string;
+  Name: string;
+  ContinueNumbersAcrossStories: string;
+  ContinueNumbersAcrossDocuments: string;
+};
+export type SectionProperties = {
   PageNumberStyle: FrameColor;
-}
-export interface Section {
+};
+export type Section = {
   Properties: SectionProperties;
-  '@_Self': string;
-  '@_Length': string;
-  '@_AlternateLayoutLength': string;
-  '@_AlternateLayout': string;
-  '@_Pagination': string;
-  '@_PaginationMaster': ActiveConditionSet;
-  '@_Name': string;
-  '@_ContinueNumbering': string;
-  '@_IncludeSectionPrefix': string;
-  '@_Marker': string;
-  '@_PageStart': string;
-  '@_SectionPrefix': string;
-}
+  Self: string;
+  Length: string;
+  AlternateLayoutLength: string;
+  AlternateLayout: string;
+  Pagination: string;
+  PaginationMaster: ActiveConditionSet;
+  Name: string;
+  ContinueNumbering: string;
+  IncludeSectionPrefix: string;
+  Marker: string;
+  PageStart: string;
+  SectionPrefix: string;
+};
 
-export interface TaggedPDFPreference {
-  '@_StructureOrder': string;
-}
+export type TaggedPDFPreference = {
+  StructureOrder: string;
+};
 
-export interface VariablePreference {
-  '@_TextBefore': string;
-  '@_Format': string;
-  '@_TextAfter': string;
-  '@_Scope'?: string;
-}
+export type VariablePreference = {
+  TextBefore: string;
+  Format: string;
+  TextAfter: string;
+  Scope?: string;
+};
 
-export interface FileNameVariablePreference {
-  '@_TextBefore': string;
-  '@_IncludePath': string;
-  '@_IncludeExtension': string;
-  '@_TextAfter': string;
-}
+export type FileNameVariablePreference = {
+  TextBefore: string;
+  IncludePath: string;
+  IncludeExtension: string;
+  TextAfter: string;
+};
 
-export interface MatchParagraphStylePreference {
-  '@_TextBefore': string;
-  '@_TextAfter': string;
-  '@_AppliedParagraphStyle': string;
-  '@_SearchStrategy': string;
-  '@_ChangeCase': string;
-  '@_DeleteEndPunctuation': string;
-}
-export interface TextVariable {
-  '@_Self': string;
-  '@_Name': string;
-  '@_VariableType': string;
+export type MatchParagraphStylePreference = {
+  TextBefore: string;
+  TextAfter: string;
+  AppliedParagraphStyle: string;
+  SearchStrategy: string;
+  ChangeCase: string;
+  DeleteEndPunctuation: string;
+};
+export type TextVariable = {
+  Self: string;
+  Name: string;
+  VariableType: string;
   ChapterNumberVariablePreference?: VariablePreference;
   DateVariablePreference?: VariablePreference;
   FileNameVariablePreference?: FileNameVariablePreference;
   PageNumberVariablePreference?: VariablePreference;
   MatchParagraphStylePreference?: MatchParagraphStylePreference;
-}
+};
 
-export interface IDPkg {
-  '@_src': string;
-}
+export type IDPkg = {
+  src: string;
+};
 
-export interface Document {
+export type Document = {
   Language: { [key: string]: string };
   'idPkg:Graphic': IDPkg;
   'idPkg:Fonts': IDPkg;
@@ -234,7 +234,7 @@ export interface Document {
   'idPkg:Tags': IDPkg;
   Layer: Layer[];
   'idPkg:MasterSpread': IDPkg;
-  'idPkg:Spread': IDPkg;
+  'idPkg:Spread': IDPkg | IDPkg[];
   Section: Section;
   DocumentUser: DocumentUser;
   CrossReferenceFormat: CrossReferenceFormat[];
@@ -243,22 +243,22 @@ export interface Document {
   IndexingSortOption: IndexingSortOption[];
   ABullet: ABullet[];
   Assignment: Assignment;
-  '@_xmlns:idPkg': string;
-  '@_DOMVersion': string;
-  '@_Self': string;
-  '@_StoryList': string;
-  '@_ZeroPoint': string;
-  '@_ActiveLayer': string;
-  '@_CMYKProfile': string;
-  '@_RGBProfile': string;
-  '@_SolidColorIntent': string;
-  '@_AfterBlendingIntent': string;
-  '@_DefaultImageIntent': string;
-  '@_RGBPolicy': string;
-  '@_CMYKPolicy': string;
-  '@_AccurateLABSpots': string;
-}
+  'xmlns:idPkg': string;
+  DOMVersion: string;
+  Self: string;
+  StoryList: string;
+  ZeroPoint: string;
+  ActiveLayer: string;
+  CMYKProfile: string;
+  RGBProfile: string;
+  SolidColorIntent: string;
+  AfterBlendingIntent: string;
+  DefaultImageIntent: string;
+  RGBPolicy: string;
+  CMYKPolicy: string;
+  AccurateLABSpots: string;
+};
 
-export interface DesignMap {
+export type DesignMap = {
   Document: Document;
-}
+};
