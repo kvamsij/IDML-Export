@@ -51,13 +51,8 @@ describe('Preferences Data Processor', () => {
       const expectedData = {
         documentPreferences: (parsedData as IDMLPreferences)['idPkg:Preferences'].DocumentPreference,
       };
-      const { processedData } = preferences.process(parsedData);
+      const processedData = preferences.process(parsedData);
       expect(processedData).toMatchObject(expectedData);
-    });
-    it('should return datastoreName Preferences', async () => {
-      const preferences = new PreferenceDataProcessor();
-      const { dataStoreName } = preferences.process(parsedData);
-      expect(dataStoreName).toStrictEqual('Preferences');
     });
   });
 });

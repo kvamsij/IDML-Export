@@ -52,14 +52,8 @@ describe('Spreads Data Processor', () => {
       const { Spread } = (parsedData as IDMLSpread)['idPkg:Spread'];
 
       const expectedData = [Spread];
-      const { processedData } = spreadsDataProcessor.process(parsedData as IDMLSpread);
+      const processedData = spreadsDataProcessor.process(parsedData as IDMLSpread);
       expect(processedData).toMatchObject(expectedData);
-    });
-    it('should return dataStoreName as Spread', async () => {
-      const spreadsDataProcessor = new SpreadsDataProcessor();
-
-      const { dataStoreName } = spreadsDataProcessor.process(parsedData as IDMLSpread);
-      expect(dataStoreName).toStrictEqual('Spread');
     });
   });
 });
