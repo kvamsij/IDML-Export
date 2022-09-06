@@ -53,7 +53,11 @@ describe('IDML Folder System', () => {
       jest.spyOn(folderSystem, 'getPaths').mockImplementation(async (): Promise<GetPathsReturnType> => {
         fileReaderMock();
         fileParserMock();
-        return { '@_Self': 'something' };
+        return {
+          storyPaths: [{ src: 'something' }],
+          resourcesPaths: { fonts: { src: 'something' } },
+          spreadPaths: [{ src: 'something' }],
+        };
       });
       try {
         await folderSystem.getPaths();
@@ -68,15 +72,18 @@ describe('IDML Folder System', () => {
     const folderSystem = new IDMLFolderSystem(rootPath, fileReader, fileParser);
 
     it('should return filePaths', async () => {
-      expect.assertions(7);
+      expect.assertions(6);
       const result = folderSystem.getPaths();
-      await expect(result).resolves.toHaveProperty('idPkg:Graphic.src', 'Resources/Graphic.xml');
-      await expect(result).resolves.toHaveProperty('idPkg:Fonts.src', 'Resources/Fonts.xml');
-      await expect(result).resolves.toHaveProperty('idPkg:Styles.src', 'Resources/Styles.xml');
-      await expect(result).resolves.toHaveProperty('idPkg:Preferences.src', 'Resources/Preferences.xml');
-      await expect(result).resolves.toHaveProperty('idPkg:Spread.src');
-      await expect(result).resolves.toHaveProperty('idPkg:Story');
-      await expect(result).resolves.toHaveProperty('idPkg:MasterSpread');
+      await expect(result).resolves.toHaveProperty('storyPaths');
+      await expect(result).resolves.toHaveProperty('spreadPaths');
+      await expect(result).resolves.toHaveProperty('resourcesPaths.graphicPath', { src: 'Resources/Graphic.xml' });
+      await expect(result).resolves.toHaveProperty('resourcesPaths.fontsPath', { src: 'Resources/Fonts.xml' });
+      await expect(result).resolves.toHaveProperty('resourcesPaths.preferencesPath', {
+        src: 'Resources/Preferences.xml',
+      });
+      await expect(result).resolves.toHaveProperty('resourcesPaths.stylesPath', {
+        src: 'Resources/Styles.xml',
+      });
     });
   });
 });
