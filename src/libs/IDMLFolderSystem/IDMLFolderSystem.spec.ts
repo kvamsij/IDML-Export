@@ -54,9 +54,14 @@ describe('IDML Folder System', () => {
         fileReaderMock();
         fileParserMock();
         return {
-          storyPaths: [{ src: 'something' }],
-          resourcesPaths: { fonts: { src: 'something' } },
-          spreadPaths: [{ src: 'something' }],
+          storyPaths: ['something'],
+          resourcesPaths: {
+            graphicPath: 'something',
+            fontsPath: 'something',
+            preferencesPath: 'something',
+            stylesPath: 'something',
+          },
+          spreadPaths: ['something'],
         };
       });
       try {
@@ -76,14 +81,10 @@ describe('IDML Folder System', () => {
       const result = folderSystem.getPaths();
       await expect(result).resolves.toHaveProperty('storyPaths');
       await expect(result).resolves.toHaveProperty('spreadPaths');
-      await expect(result).resolves.toHaveProperty('resourcesPaths.graphicPath', { src: 'Resources/Graphic.xml' });
-      await expect(result).resolves.toHaveProperty('resourcesPaths.fontsPath', { src: 'Resources/Fonts.xml' });
-      await expect(result).resolves.toHaveProperty('resourcesPaths.preferencesPath', {
-        src: 'Resources/Preferences.xml',
-      });
-      await expect(result).resolves.toHaveProperty('resourcesPaths.stylesPath', {
-        src: 'Resources/Styles.xml',
-      });
+      await expect(result).resolves.toHaveProperty('resourcesPaths.graphicPath');
+      await expect(result).resolves.toHaveProperty('resourcesPaths.fontsPath');
+      await expect(result).resolves.toHaveProperty('resourcesPaths.preferencesPath');
+      await expect(result).resolves.toHaveProperty('resourcesPaths.stylesPath');
     });
   });
 });
