@@ -4,10 +4,13 @@ export type IDMLFilePaths = {
 
 export type GetPathsReturnType = {
   resourcesPaths: {
-    [key: string]: IDMLFilePaths;
+    graphicPath: string;
+    fontsPath: string;
+    preferencesPath: string;
+    stylesPath: string;
   };
-  storyPaths: Array<IDMLFilePaths>;
-  spreadPaths: Array<IDMLFilePaths>;
+  storyPaths: Array<string>;
+  spreadPaths: Array<string>;
 };
 
 export interface IDMLFolderSystemInterface {
