@@ -36,20 +36,25 @@ export class IDMLFolderSystem implements IDMLFolderSystemInterface {
 
   // eslint-disable-next-line class-methods-use-this
   private extractRequiredFilePaths(paths: { [key: string]: IDMLFilePaths }): GetPathsReturnType {
-    const {
-      'idPkg:Story': storyPaths,
-      'idPkg:Spread': spreadPaths,
-      'idPkg:Graphic': graphicPath,
-      'idPkg:Fonts': fontsPath,
-      'idPkg:Preferences': preferencesPath,
-      'idPkg:Styles': stylesPath,
-    } = paths;
-    const resourcesPaths = { graphicPath, fontsPath, preferencesPath, stylesPath };
+    const storyPaths = this.getFullPath(paths['idPkg:Story']);
+    const spreadPaths = this.getFullPath(paths['idPkg:Spread']);
+
+    const graphicPath = this.getFullPath(paths['idPkg:Graphic'])[0];
+    const fontsPath = this.getFullPath(paths['idPkg:Fonts'])[0];
+    const preferencesPath = this.getFullPath(paths['idPkg:Preferences'])[0];
+    const stylesPath = this.getFullPath(paths['idPkg:Styles'])[0];
+
     const filePaths = {
-      storyPaths: Array.isArray(storyPaths) ? storyPaths : [storyPaths],
-      spreadPaths: Array.isArray(spreadPaths) ? spreadPaths : [spreadPaths],
-      resourcesPaths,
+      storyPaths,
+      spreadPaths,
+      resourcesPaths: { graphicPath, fontsPath, preferencesPath, stylesPath },
     };
+
     return filePaths;
+  }
+
+  private getFullPath(filePaths: { src: string } | Array<{ src: string }>): string[] {
+    if (Array.isArray(filePaths)) return filePaths.map((filePath) => path.join(this.rootPath, filePath.src));
+    return Object.entries(filePaths).map(([, value]) => path.join(this.rootPath, value));
   }
 }
