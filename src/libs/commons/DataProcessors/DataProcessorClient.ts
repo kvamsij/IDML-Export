@@ -1,4 +1,5 @@
 import { DataProcessorClientInterface } from './DataProcessorClientInterface';
+import { DesignMapProcessor } from './DesignMap/DesignMapProcessor';
 import { FontsDataProcessor } from './Resources/FontsDataProcessor/FontsDataProcessor';
 import { GraphicDataProcessor } from './Resources/GraphicDataProcessor/GraphicDataProcessor';
 import {
@@ -24,6 +25,8 @@ export class DataProcessorClient implements DataProcessorClientInterface {
 
   private spreadDataProcessor: DataProcessorInterface;
 
+  private designMapProcessor: DataProcessorInterface;
+
   constructor() {
     this.stylesDataProcessor = new StylesDataProcessor();
     this.graphicDataProcessor = new GraphicDataProcessor();
@@ -33,7 +36,10 @@ export class DataProcessorClient implements DataProcessorClientInterface {
     this.storyDataProcessor = new StoryDataProcessor();
     this.spreadDataProcessor = new SpreadsDataProcessor();
 
+    this.designMapProcessor = new DesignMapProcessor();
+
     this.stylesDataProcessor
+      .setNext(this.designMapProcessor)
       .setNext(this.graphicDataProcessor)
       .setNext(this.preferenceDataProcessor)
       .setNext(this.fontDataProcessor)
