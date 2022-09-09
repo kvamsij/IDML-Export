@@ -1,5 +1,9 @@
 import { MapDataType } from '../commons/DataLoaders/DataLoaderClientInterface';
-import { ProcessorDataType } from '../commons/DataProcessors/Resources/interfaces/DataProcessorInterface';
+import {
+  GetPathsReturnType,
+  ProcessorDataType,
+  ProcessorReturnType,
+} from '../commons/DataProcessors/Resources/interfaces/DataProcessorInterface';
 import { FileOperations, FileOperatorInterface } from './FileOperatorInterface';
 
 export class FileOperator implements FileOperatorInterface {
@@ -10,7 +14,10 @@ export class FileOperator implements FileOperatorInterface {
       const { fileReader, fileParser, dataProcessor, dataLoader } = this.operations;
       const fileData = await fileReader.read(filePath);
       const parsedData = await fileParser.parse<ProcessorDataType>(fileData);
-      const processedData = await dataProcessor.process(parsedData);
+      const processedData = (await dataProcessor.process(parsedData)) as Exclude<
+        ProcessorReturnType,
+        GetPathsReturnType
+      >;
       dataLoader.load({ dataStore: this.dataStore, processedData });
     } catch (error: any) {
       throw new Error(error.message);
